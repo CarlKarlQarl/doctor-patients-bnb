@@ -10,14 +10,14 @@ Appointment.destroy_all
 Doctor.destroy_all
 Patient.destroy_all
 
-10.times do
+100.times do
     Patient.create(name: Faker::Name.name , age: Faker::Number.within(range: 1..100))
 end
 
-10.times do
+100.times do
     Doctor.create(name: Faker::Name.name, speciality: Faker::Company.profession)
 end
 
-10.times do
+100.times do
     Appointment.create(patient_id: Patient.all.sample.id, doctor_id: Doctor.all.sample.id)
 end
